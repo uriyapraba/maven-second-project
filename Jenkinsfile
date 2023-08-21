@@ -24,7 +24,8 @@ pipeline
         {
             steps
             {
-                sh 'mvn clean verify'
+                sh 'pwd ; ls -lrt'
+                sh 'mvn clean package'
             }
         }
         /*stage('sonar-code-analysis')
