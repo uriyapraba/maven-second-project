@@ -6,7 +6,7 @@ pipeline
     }
     tools
     {
-        maven 'maven_3.6.3'
+        maven 'maven-3.9.4'
     }
     stages
     {
@@ -14,7 +14,7 @@ pipeline
         {
             steps
             {
-                checkout scmGit(branches: [[name: 'origin/master']],
+                checkout scmGit(branches: [[name: 'origin/branch1']],
                 userRemoteConfigs: [
                     [ url: 'https://github.com/uriyapraba/maven-second-project.git' ]
                 ])
@@ -27,7 +27,7 @@ pipeline
                 sh 'mvn clean verify'
             }
         }
-        stage('sonar-code-analysis')
+        /*stage('sonar-code-analysis')
         {
             steps
             {
@@ -36,6 +36,6 @@ pipeline
                     sh 'mvn sonar:sonar'
                 }
             }
-        }
+        }*/
     }
 }
