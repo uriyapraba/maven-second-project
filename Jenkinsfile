@@ -28,15 +28,15 @@ pipeline
                 sh 'mvn clean package'
             }
         }
-        /*stage('sonar-code-analysis')
+        stage('sonar-code-analysis')
         {
             steps
             {
-                withSonarQubeEnv('sonarqube-9.9.1') 
+                withSonarQubeEnv('sonarqube-9') 
                 { 
                     sh 'mvn sonar:sonar'
                 }
             }
-        }*/
+        }
     }
 }
